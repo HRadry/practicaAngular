@@ -1,0 +1,57 @@
+<div class=" vh-100 row m-0 justify-content-center align-items-center">
+    <div class="bg-white col-auto shadow-sm p-3 mb-5 bg-body rounded py-5">
+      <div class="container d-flex align-items-center justify-content-center ">
+        <div class="text-center">
+          <form novalidate [formGroup]="user" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label>
+                <span>Nombre</span>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Nombre del usuario"
+                  formControlName="nombre"
+                />
+              </label>
+              <div
+                class="error"
+                style="color: red;"
+                *ngIf="user.get('nombre')?.hasError('required') && user.get('nombre')?.touched"
+
+              >
+                Nombre requerido
+              </div>
+            </div>
+            <div class="form-group">
+                <label>
+                  <span>Apellido</span>
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Apellido del usuario"
+                    formControlName="apellido"
+                  />
+                </label>
+                <div
+                  class="error"
+                  style="color: red;"
+                  *ngIf="user.get('apellido')?.hasError('required') && user.get('apellido')?.touched"
+
+                >
+                Apellido requerido
+                </div>
+              </div>
+          <div>
+            <button type="submit" [disabled]="user.invalid" class="btn btn-success m-4">
+              Iniciar sesión
+            </button>
+          </div>
+        </form>
+        <p>Form value: {{ user.value | json }}</p>
+        <p>Form status: {{ user.status | json }}</p>
+        <p class="text-danger" *ngIf="!expression"> Usuario o contraseña incorrectos </p>
+      </div>
+    </div>
+  </div>
+</div>
+

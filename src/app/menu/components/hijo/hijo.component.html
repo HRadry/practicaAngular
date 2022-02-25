@@ -1,0 +1,22 @@
+<div class="row justify-content-center align-items-center ">
+    <div class="bg-white mx-5 px-5 col-auto shadow-lg p-3 mb-5 rounded py-5">
+      <div class="card bg-white" style="width: 18rem;">
+        <img src="https://images.pexels.com/photos/1022158/pexels-photo-1022158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">{{value}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+        </ul>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+            [ngModel]='dataWd' (ngModelChange)='values($event)'>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
